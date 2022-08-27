@@ -7,69 +7,40 @@
   under the terms of the MIT License; see LICENSE file for more details.
 #}
 {%- extends "invenio_theme/frontpage.html" %}
+{%- from "invenio_app_rdm/records/macros/secciones.html" import normativa, categoria %}
 
 {%- block page_header %}
 {%- include "invenio_app_rdm/header_frontpage.html" %}
 {%- endblock page_header %}
 
+
+
 {%- block page_body %}
 {%- block first_section %}
-<div class="get-started-section section-content white-bg">
-  <h2 class="section-title">
-    {{ _("You've successfully installed InvenioRDM!") }}
-    <br/>
-    {{ _("What is ahead?") }}
-  </h2>
-
-  <div class="ui container three column stackable grid center aligned vertically padded relaxed">
-      <div class="rdm-goal column">
-        <div class="featured-list">1</div>
-        <h3 class="section-title">{{ _("Configure") }}</h3>
-        <div class="command-line">
-          {% trans configuration_link="https://inveniordm.docs.cern.ch/install/configuration/" %}
-            Configure the datamodel, resource types, permissions and much more to make it suit your needs! For more
-            information on how to do it visit the <a href="{{ configuration_link }}" target="_blank">configuration
-            section in the docs</a>.
-          {% endtrans %}
-        </div>
-      </div>
-      <div class="rdm-goal column">
-        <div class="featured-list">2</div>
-        <h3 class="section-title">{{ _("Customize") }}</h3>
-          <div class="command-line">
-            {% trans configuration_link="https://inveniordm.docs.cern.ch/customize/" %}
-              Customize the layout and adapt the styling to match your institution's. See how to do so <a
-              href="{{ configuration_link }}" target="_blank">here</a>.
-            {% endtrans %}
-        </div>
-      </div>
-      <div class="rdm-goal column">
-        <div class="featured-list">3</div>
-        <h3 class="section-title">{{ _("Run it!") }}</h3>
-        <div class="command-line">
-          {% trans
-          deployment_link="https://inveniordm.docs.cern.ch/install/build-setup-run/#run_1"
-          %}
-          <a href="{{ deployment_link }}" target="_blank">Run</a> your
-          InvenioRDM instance locally or in containers.
-          {% endtrans %}
-        </div>
-      </div>
-    <div class="row one column center aligned">
-      <div class="sixteen wide column">
-          <div class="ui primary button labeled icon big goto-button">
-            <i class="file alternate outline icon"></i>
-            <a href="https://inveniordm.docs.cern.ch"
-                target="_blank">{{ _("Docs") }}</a>
-          </div>
-          <div class="ui primary button labeled icon big goto-button">
-            <i class="github icon"></i>
-            <a href="https://github.com/inveniosoftware"
-                target="_blank">{{ _("Code") }}</a>
-          </div>
-        </div>
-    </div>
-  </div>
+<script src="{{ url_for('static', filename='categorias.js') }}"></script>
+<b> Explora todas las normativas </b>
+<div class="get-started-section section-content normativa-block" id="seccion-normativas">
+  {{ normativa('Ley orgánica de comunicación', '/static/images/repo.jpeg','https://www.telecomunicaciones.gob.ec/wp-content/uploads/2020/01/Ley-Organica-de-Comunicaci%C3%B3n.pdf') }}
+  {{ normativa('Ley orgánica de cultura', '/static/images/repo.jpeg','https://www.gob.ec/sites/default/files/regulations/2018-09/Ley%20Org%C3%A1nica%20de%20Cultura%20pdf%20%284%29.pdf') }}
+  {{ normativa('Código orgánico de economía social de los conocimientos, creatividad e innovación', '/static/images/repo.jpeg','https://www.ambiente.gob.ec/wp-content/uploads/downloads/2018/05/Codigo-Organico-Economia-Social-de-los-Conosimientos.pdf') }}
+  {{ normativa('Ley de comercio electrónico, firmas y mensajes de datos', '/static/images/repo.jpeg','https://www.telecomunicaciones.gob.ec/wp-content/uploads/downloads/2012/11/Ley-de-Comercio-Electronico-Firmas-y-Mensajes-de-Datos.pdf') }}
+  {{ normativa('Ley orgánica de emprendimiento e innovación', '/static/images/repo.jpeg','https://www.gob.ec/sites/default/files/regulations/2020-03/Documento_LEY-ORGANICA-EMPRENDIMIENTO-INNOVACION.pdf') }}
 </div>
+
+<b> Descubre por categorias </b>
+<div class="get-started-section section-content categorias-block" id="seccion-categorias">
+  {{ categoria("Medios/Formatos") }}
+  {{ categoria("Fomento y cultura") }}
+  {{ categoria("Administración y financiamiento") }}
+  {{ categoria("Propiedad intelectual") }}
+  {{ categoria("Fases de producción") }}
+</div>
+
+<b>Subcategorias</b>
+<p id="SubcategoriaSeleccionada">Selecciona una categoria</p>
+<div class="get-started-section section-content subCategorias-block" id="subCategorias">
+
+</div>
+
 {%- endblock first_section %}
 {%- endblock page_body %}

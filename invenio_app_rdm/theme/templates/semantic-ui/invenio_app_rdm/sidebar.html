@@ -1,0 +1,19 @@
+
+
+ <!-- The sidebar -->
+{%- block sidebar %}
+{% set url = url_for('invenio_search_ui.search') + '?q=' %}
+
+<script src="{{ url_for('static', filename='categorias.js') }}">
+
+</script>
+
+    <div class="sidebar">
+      <a href="/"></i> Inicio</a>
+      <a onclick="sidebarController('Medios/Formatos')"></i> Medios</a>
+      <a onclick="sidebarController('Fomento y cultura')"> Fomento</a>
+      <a onclick="sidebarController('Administración y financiamiento')">Administración</a>
+      <a onclick="sidebarController('Propiedad intelectual')"> Intelectual </a>
+      <a onclick="sidebarController('Fases de producción')"> Producción </a>
+    </div> 
+{% endblock %}

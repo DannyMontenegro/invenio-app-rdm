@@ -31,9 +31,12 @@
       <div class="row">
           <div class="sixteen wide mobile four wide computer column"></div>
           <div class="sixteen wide mobile eight wide computer column center aligned">
+            <h4 class="ui center aligned header inverted">
+              {{ _("Repositorio web de términos, procesos y normativa nacional vigente para sector productivo audiovisual y cinematográfico ecuatoriano") }}
+            </h4>
             <form action="{{ url_for('invenio_search_ui.search') }}" class="ui form" role="search">
               <div class="ui fluid big action input">
-                <input type="text" name="q" class="form-control" placeholder="{{ _('Search') }}">
+                <input type="text" name="q" class="form-control" placeholder="{{ _('Busca ingresando una palabra relacionada a tu tema de interes') }}">
                 <button type="submit" class="ui icon search button" aria-label="{{ _('Search') }}"><i class="search icon"></i></button>
               </div>
             </form>

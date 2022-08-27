@@ -35,6 +35,7 @@ import {
 import { SearchItemCreators } from "../utils";
 import PropTypes from "prop-types";
 
+
 export const RDMRecordResultsListItem = ({ result }) => {
   const accessStatusId = _get(result, "ui.access_status.id", "open");
   const accessStatus = _get(result, "ui.access_status.title_l10n", "Open");
@@ -45,8 +46,10 @@ export const RDMRecordResultsListItem = ({ result }) => {
     "No creation date found."
   );
   const creators = result.ui.creators.creators.slice(0, 3);
+  
 
   const descriptionStripped = _get(result, "ui.description_stripped", "No description");
+  console.log(result)
 
   const publicationDate = _get(
     result,
@@ -57,12 +60,32 @@ export const RDMRecordResultsListItem = ({ result }) => {
   const subjects = _get(result, "ui.subjects", []);
   const title = _get(result, "metadata.title", "No title");
   const version = _get(result, "ui.version", null);
+  const titles = _get(result, "ui.additional_titles", []);
 
+  const descriptionFull = _get(result, "metadata.description", "Sin descripción");
+  
   // Derivatives
   const viewLink = `/records/${result.id}`;
   return (
     <Item>
       <Item.Content>
+        <div id="descripcion" dangerouslySetInnerHTML={{__html: descriptionFull}} ></div>
+        
+        { titles.map((title , index) => {
+          if(index!= titles.length -1 ){
+            return <div class="titulo">{title.title}</div>
+          }
+          else{
+            return <div class ="titulo colored"> {title.title}</div>
+          }
+        }) 
+        }
+      </Item.Content>
+    </Item>
+    /*
+    <Item>
+      <Item.Content>
+        
         <Item.Extra className="labels-actions">
           <Label size="tiny" className="primary">
             {publicationDate} ({version})
@@ -75,6 +98,7 @@ export const RDMRecordResultsListItem = ({ result }) => {
             {accessStatus}
           </Label>
         </Item.Extra>
+        
         <Item.Header as="h2">
           <a href={viewLink}>{title}</a>
         </Item.Header>
@@ -93,19 +117,27 @@ export const RDMRecordResultsListItem = ({ result }) => {
           {createdDate && (
             <div>
               <small>
-                {i18next.t("Uploaded on")} <span>{createdDate}</span>
+                {i18next.t("Uploaded on A")} <span>{createdDate}</span>
               </small>
             </div>
           )}
         </Item.Extra>
       </Item.Content>
     </Item>
+    */
   );
+  
 };
 
 RDMRecordResultsListItem.propTypes = {
   result: PropTypes.object.isRequired,
 };
+
+let convertStringtoHTML = function(str){
+  let parser = new DOMParser()
+  let doc = parser.parseFromString(str, 'text/html')
+  return doc.body;
+}
 
 // TODO: Update this according to the full List item template?
 export const RDMRecordResultsGridItem = ({ result }) => {

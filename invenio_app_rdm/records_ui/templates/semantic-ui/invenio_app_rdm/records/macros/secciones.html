@@ -1,0 +1,23 @@
+
+{% block javascript %}
+   
+{% endblock %}
+
+{%- macro normativa(nombre, rutaImagen, url) %}
+<a class='normativa white-bg' href={{ url }} target="_blank">
+    <div> 
+        <img src={{ rutaImagen }} width="100%" height="125px" alt="images" class="center"> 
+        <b>{{ nombre }}</b>
+    </div>
+</a>
+{%- endmacro %}
+
+{%- macro categoria(nombre) %}
+{% set url = url_for('invenio_search_ui.search') + '?q=' %}
+
+<div class="categoria {{ nombre }} white-bg" onClick="cargarSubcategoriasCards('{{ nombre }}')">
+    {{ nombre }}
+</div>
+
+{%- endmacro %}
+

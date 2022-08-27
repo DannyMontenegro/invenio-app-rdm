@@ -53,9 +53,9 @@
 
 @navbarBackgroundImage: linear-gradient(
   12deg,
-  rgba(3, 119, 205, 1),
-  rgba(3, 119, 205, 1) 15%,
-  rgba(251, 130, 115, 0.69)
+  rgba(46, 21, 121, 255),
+  rgba(47, 9, 64, 255) 15%,
+  rgba(80, 0, 40, 255)
 );
 @navbarBackgroundColor: rgba(3, 119, 205, 1);
 @versionActiveColor: #d9edf7;

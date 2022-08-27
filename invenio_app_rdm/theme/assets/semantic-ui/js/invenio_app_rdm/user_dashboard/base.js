@@ -68,7 +68,7 @@ export function DashboardResultView(props) {
                 <Overridable id="DashboardResultView.resultList" {...props}>
                   <Grid.Row>
                     <Grid.Column>
-                      <ResultsList />
+                      <ResultsList dashboardView={true}/>
                     </Grid.Column>
                   </Grid.Row>
                 </Overridable>

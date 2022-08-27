@@ -132,7 +132,12 @@ pre.export.result {
 
 .invenio-page-body {
   padding-bottom: @defaultPadding;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: rgba(243, 242, 238, 255);
 }
+
+
 
 
 /* footer */
@@ -160,6 +165,7 @@ pre.export.result {
 .footer-top {
   background-color: @footerLightColor;
   padding: 2rem 0 4rem;
+  text-align: center;
 }
 
 .footer-bottom, .sub-footer {
@@ -188,14 +194,20 @@ pre.export.result {
 
 /* frontpage */
 
+#seccion-normativas{
+  margin-bottom: 3em;
+}
+
+#seccion-categorias{
+  padding-bottom: 1em;
+}
+
+
 .section-content {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 1em;
   text-align: justify;
   font-size: 1.2em;
-  font-weight: 300;
   width: 100%;
-
   h6 {
     font-weight: 300;
     font-size: 1.4em;
@@ -203,6 +215,131 @@ pre.export.result {
     color: @primaryColor;
   }
 }
+
+.normativa-block{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: auto;
+}
+
+.normativa-block .normativa{
+  flex: 1 0 20%;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.normativa-block .normativa>div{
+
+  color: black;
+}
+
+.normativa-block .normativa:not(:last-child){
+
+  margin-right: 30px;
+}
+
+.normativa-block .normativa > div > img{
+  display:block;
+  margin: auto;
+  border-radius: 25px;
+}
+
+.categorias-block{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categorias-block .categoria{
+  width: 18%;
+  padding: 5px 0 5px 0;
+  text-align:center;
+  font-size: 12px;
+  border-radius: 25px;
+}
+
+.categorias-block .categoria:not(:last-child){
+
+  margin-right: 10px;
+}
+
+.subCategorias-block{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subCategorias-block .enlace-categoria:not(:last-child){
+
+  margin-right: 10px;
+}
+
+.subCategorias-block .subcategoria{
+  flex: 1 0 20%;
+  text-align:center;
+  font-size: 12px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  border-width: thin;
+  height: 100px;
+  width: 150px;
+  padding-top: 10px;
+}
+
+.subCategorias-block a{
+  color: black;
+  text-decoration: none;
+}
+
+
+#contenedor .ui.container {
+  width: 100% !important;
+}
+
+#contenedor .ui.container * > .content > *{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 2% 0 2%;
+  text-align: center;
+
+}
+
+.titulo:not(:last-child) {
+  width: 10%;
+}
+
+.titulo.colored{
+  background-image: @navbarBackgroundImage;
+  color: white;
+  border-radius: 25px;
+  max-width: 20%;
+}
+
+#descripcion {
+  width: 50%;
+  text-align: justify !important;
+}
+
+.encabezado{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 2% 0 2%;
+  text-align: center;
+}
+
+.encabezado:first-child{
+  width: 50% !important;
+}
+
+.encabezado:not(:last-child) {
+  width: 10%;
+}
+
+
 
 .command-line a,
 .hp-blog-section a {
