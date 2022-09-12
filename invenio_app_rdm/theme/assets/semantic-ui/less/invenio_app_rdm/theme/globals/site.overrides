@@ -220,9 +220,7 @@ pre.export.result {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: auto;
+  cursos: grab;
 }
 
 .normativa-block .normativa{
@@ -243,7 +241,7 @@ pre.export.result {
   margin-right: 30px;
 }
 
-.normativa-block .normativa > div > img{
+.normativa-block .normativa > div > div >img{
   display:block;
   margin: auto;
   border-radius: 25px;
@@ -262,6 +260,11 @@ pre.export.result {
   border-radius: 25px;
 }
 
+.categorias-block .categoria:hover{
+  color: white;
+  background-image: @navbarBackgroundImage;
+}
+
 .categorias-block .categoria:not(:last-child){
 
   margin-right: 10px;
@@ -270,6 +273,8 @@ pre.export.result {
 .subCategorias-block{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  
 }
 
 .subCategorias-block .enlace-categoria:not(:last-child){
@@ -285,9 +290,15 @@ pre.export.result {
   border-radius: 25px;
   border-color: black;
   border-width: thin;
-  height: 100px;
-  width: 150px;
+  height: 120px;
+  width: 250px;
   padding-top: 10px;
+  background-image: url("../../../../../static/images/repo.jpeg");/*Mejor colocarlo en el html usando url_for*/
+}
+
+.subCategorias-block .subcategoria:hover{
+  transform: scale(1.2);
+  transform-origin: center;
 }
 
 .subCategorias-block a{
@@ -338,6 +349,22 @@ pre.export.result {
 .encabezado:not(:last-child) {
   width: 10%;
 }
+
+.filter{
+  position: relative;
+}
+
+.filter:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width:100%;
+    height: 125px;
+    bottom: 0;
+    opacity: 0.7;
+    background-image:@navbarBackgroundImage;
+     border-radius: 25px;
+  }
 
 
 
