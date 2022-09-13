@@ -14,6 +14,16 @@
 {%- endblock %}
 
 {%- block page_body %}
+<div id="encabezados-block">
+  <div class="encabezado"><b>Contenido</b></div>
+  <div class="encabezado"><b>Artículo</b></div>
+  <div class="encabezado"><b>Numeral, literal o párrafo</b></div>
+  <div class="encabezado"><b>Normativa</b></div>
+  <div class="encabezado"><b>Subcategoria</b></div>
+</div>
 <div data-invenio-search-config='{{ search_app_rdm_config(app_id="rdm-search") | tojson }}' id="contenedor">
 </div>
+
+
 {%- endblock page_body %}
+

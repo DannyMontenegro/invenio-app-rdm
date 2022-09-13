@@ -356,6 +356,8 @@ export const SearchHelpLinks = () => {
 };
 
 export const RDMRecordFacets = ({ aggs }) => {
+  return null;
+  /*
   return (
     <aside aria-label={i18next.t("filters")} id="search-filters">
       <Toggle
@@ -378,6 +380,7 @@ export const RDMRecordFacets = ({ aggs }) => {
       </Card>
     </aside>
   );
+  */
 };
 
 RDMRecordFacets.propTypes = {

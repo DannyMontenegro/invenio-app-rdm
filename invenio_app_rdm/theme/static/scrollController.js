@@ -1,4 +1,5 @@
-const slider = document.querySelector('.normativa-block');
+window.onload = ()=>{
+    const slider = document.getElementById("seccion-normativas");
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -25,3 +26,4 @@ slider.addEventListener('mousedown', (e) => {
     slider.scrollLeft = scrollLeft - walk;
     console.log(walk);
   });
+}

@@ -270,29 +270,41 @@ pre.export.result {
   margin-right: 10px;
 }
 
+
+.computer.only.four.wide.three.large.screen.widescreen.column{
+  display: none !important;
+}
+
+.right.aligned.two.column.row.result-options{
+  display: none !important;
+}
+
+#contenedor > * .twelve.wide.computer.thirteen.large.screen{
+  width: 100% !important;
+}
+
 .subCategorias-block{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   
 }
 
 .subCategorias-block .enlace-categoria:not(:last-child){
 
-  margin-right: 10px;
+  margin-right: 30px;
 }
 
 .subCategorias-block .subcategoria{
   flex: 1 0 20%;
-  text-align:center;
-  font-size: 12px;
+  font-size: 20px;
   border-style: solid;
   border-radius: 25px;
   border-color: black;
+  color: white;
   border-width: thin;
   height: 120px;
   width: 250px;
-  padding-top: 10px;
+  padding: 15px;
   background-image: url("../../../../../static/images/repo.jpeg");/*Mejor colocarlo en el html usando url_for*/
 }
 
