@@ -26,4 +26,14 @@ slider.addEventListener('mousedown', (e) => {
     slider.scrollLeft = scrollLeft - walk;
     console.log(walk);
   });
+
+
+  const param = new URLSearchParams(window.location.search)
+
+        const subCategoria = param.get('sub')
+        console.log(subCategoria)
+
+        if(subCategoria){
+            cargarSubcategoriasCards(subCategoria)
+        }
 }
