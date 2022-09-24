@@ -220,15 +220,30 @@ pre.export.result {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-  cursos: grab;
+  cursor: grab;
 }
 
 .normativa-block .normativa{
-  flex: 1 0 20%;
+  min-width: 250px;
+  max-width: 250px;
   border-radius: 25px;
-  padding: 10px;
   font-size: 10px;
   text-decoration: none;
+  
+}
+
+
+
+.contenedor-normativa{
+  padding: 15px;
+}
+
+.search-bar{
+  margin-left: auto;
+}
+
+div.item{
+  
 }
 
 .normativa-block .normativa>div{
@@ -287,6 +302,11 @@ pre.export.result {
   display: flex;
   flex-wrap: wrap;
   
+}
+
+.imagenes-normativa{
+  width: 100%;
+  height: auto;
 }
 
 .subCategorias-block .enlace-categoria:not(:last-child){
@@ -371,7 +391,7 @@ pre.export.result {
     display: block;
     position: absolute;
     width:100%;
-    height: 125px;
+    height: 100%;
     bottom: 0;
     opacity: 0.7;
     background-image:@navbarBackgroundImage;

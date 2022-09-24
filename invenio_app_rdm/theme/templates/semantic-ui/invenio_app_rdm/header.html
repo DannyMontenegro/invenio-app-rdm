@@ -72,6 +72,7 @@
             {%- endif %}
 
             {%- block navbar_nav %}
+              {# 
               {%- for item in current_menu.submenu('main').children|sort(attribute='order') if item.visible recursive %}
                 {%- if item.children %}
                   <div class="item">
@@ -101,9 +102,11 @@
                   <a role="menuitem" href="{{ item.url }}">{{ item.text|safe }}</a>
                 </div>
               {% endfor %}
+              #}
             {%- endblock navbar_nav %}
 
             {%- block navbar_right %}
+            {# Eliminando la clase "right" del div#}
               <div class="right menu item">
                 {%- if config.ACCOUNTS and current_user.is_authenticated %}
                   {% for item in current_menu.submenu('notifications').children|sort(attribute='order') if item.visible recursive %}
